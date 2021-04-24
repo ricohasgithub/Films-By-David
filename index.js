@@ -8,14 +8,22 @@ async function getDavids() {
 
 getDavids().then(data => console.log(data));
 
-// Cool background color change for *aesthetics*
+// Cool background color change and emoji for *aesthetics*
 var i = 0;
 
 function updateBackground() {
   let doc = document.getElementById("background");
-  let color = ["#faf884", "powderblue", "#f8b88b", "#baed91"];
+  let color = ["#faf884", "powderblue", "#f8b88b", "#baed91", "white"];
   doc.style.backgroundColor = color[i];
   i = (i + 1) % color.length;
 }
 
+function updateImage() {
+    let img = document.getElementById("home-image");
+    let images = ["./assets/movie_camera.png", "./assets/camera.png", "./assets/flash_camera.png", "./assets/popcorn.png", "./assets/magnifying_glass.png"];
+    img.src = images[i];
+    i = (i + 1) % color.length;
+}
+
 setInterval(updateBackground, 1000);
+setInterval(updateImage, 1000);
